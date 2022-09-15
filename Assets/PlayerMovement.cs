@@ -22,12 +22,16 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         currentSpeed = speed;
+
+        InputRegister.Instance.InputMovement += Move;
+    }
+    private void OnDisable()
+    {
+        InputRegister.Instance.InputMovement -= Move;
     }
 
     private void FixedUpdate()
     {
-        Move();
-
         if (IsGrounded())
         {
             coyoteTimeCounter = coyoteTime;
@@ -36,25 +40,16 @@ public class PlayerMovement : MonoBehaviour
         {
             coyoteTimeCounter -= Time.fixedDeltaTime;
         }
-
-        if (Input.GetKey(KeyCode.Space) && coyoteTimeCounter > 0f)
-        {
-            Jump(true);
-
-        }
-        if (Input.GetKey(KeyCode.Space) && IsGrounded())
-        {
-            Jump(false);
-            coyoteTimeCounter = 0f;
-        }
     }
 
-    private void Move()
+    private void Move(float directionX)
     {
-        moveInput = Input.GetAxis("Horizontal") * currentSpeed;
+        moveInput = directionX * currentSpeed;
 
         Vector2 moveVector = new Vector2(moveInput * Time.fixedDeltaTime, rb.velocity.y);
+
         rb.velocity = moveVector;
+
         if (moveInput > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -64,22 +59,11 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, -180, 0);
         }
     }
-
-    private void Jump(bool isCoyote)
-    {
-        if (isCoyote)
-        {
-            Vector2 jumpVector2 = new Vector2(rb.velocity.x, jumpForce);
-            rb.velocity = jumpVector2;
-        }else
-        {
-            Vector2 jumpVector2 = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
-    }
     
     public bool IsGrounded()
     {
         bool isGrounded = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckHeight, groundCheck.value).collider != null;
+
         return isGrounded; 
     }
 }
