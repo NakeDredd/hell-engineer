@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IDamagable
 {
     [SerializeField] private int speed;
     [SerializeField] private int jumpForce;
@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private int currentSpeed;
 
     private float moveInput;
-    private float coyoteTimeCounter;
 
     private void Start()
     {
@@ -28,18 +27,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         InputRegister.Instance.InputMovement -= Move;
-    }
-
-    private void FixedUpdate()
-    {
-        if (IsGrounded())
-        {
-            coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.fixedDeltaTime;
-        }
     }
 
     private void Move(float directionX)
@@ -65,5 +52,10 @@ public class PlayerMovement : MonoBehaviour
         bool isGrounded = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckHeight, groundCheck.value).collider != null;
 
         return isGrounded; 
+    }
+
+    public void GetDamage(int damage)
+    {
+
     }
 }

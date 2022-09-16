@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 717973450447542792, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: m_Name
-      value: ThrowPlace
+      value: ThrowPlace Variant
       objectReference: {fileID: 0}
     - target: {fileID: 717973450447542793, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: m_RootOrder
@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 717973450447542794, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: trap
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6484190628253128584, guid: a0f8db6cca2196d4c889b35d9a8edd40, type: 3}
     - target: {fileID: 717973450789808521, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: gridsPrice.Array.data[0]
       value: 3

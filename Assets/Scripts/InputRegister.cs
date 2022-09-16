@@ -6,7 +6,7 @@ using UnityEngine;
 public class InputRegister : Singleton<InputRegister>
 {
     public Action<float> InputMovement;
-    public Action InputInteractive;
+    public Action InputInteractive, UntapInteractive;
 
     private void Update()
     {
@@ -15,6 +15,10 @@ public class InputRegister : Singleton<InputRegister>
         if (Input.GetKeyDown(KeyCode.E))
         {
             InputInteractive?.Invoke();
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            UntapInteractive?.Invoke();
         }
     }
 }

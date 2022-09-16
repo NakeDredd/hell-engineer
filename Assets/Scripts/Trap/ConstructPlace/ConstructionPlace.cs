@@ -10,8 +10,6 @@ public class ConstructionPlace : MonoBehaviour
 
     private GameObject player;
 
-
-
     private void Start()
     {
         placeUI.Init();
