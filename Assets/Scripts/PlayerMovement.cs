@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IDamagable
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private int speed;
     [SerializeField] private int jumpForce;
@@ -52,10 +52,5 @@ public class PlayerMovement : MonoBehaviour, IDamagable
         bool isGrounded = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckHeight, groundCheck.value).collider != null;
 
         return isGrounded; 
-    }
-
-    public void GetDamage(int damage)
-    {
-
     }
 }
