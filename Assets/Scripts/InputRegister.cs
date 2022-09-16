@@ -6,9 +6,15 @@ using UnityEngine;
 public class InputRegister : Singleton<InputRegister>
 {
     public Action<float> InputMovement;
+    public Action InputInteractive;
 
     private void Update()
     {
-        InputMovement.Invoke(Input.GetAxis("Horizontal"));
+        InputMovement?.Invoke(Input.GetAxis("Horizontal"));
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            InputInteractive?.Invoke();
+        }
     }
 }
