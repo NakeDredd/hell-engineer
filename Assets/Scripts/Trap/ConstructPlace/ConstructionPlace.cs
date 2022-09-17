@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstructionPlace : MonoBehaviour
+public class ConstructionPlace : MonoBehaviour, IInteractive
 {
     [SerializeField] private ConstructionPlaceUI placeUI;
     [SerializeField] private BaseTrap trap;
     [SerializeField] private Transform place;
-
-    private GameObject player;
 
     private void Start()
     {
@@ -16,37 +14,32 @@ public class ConstructionPlace : MonoBehaviour
 
         placeUI.gameObject.SetActive(false);
     }
-    private void OnEnable()
-    {
-        InputRegister.Instance.InputInteractive += PaymantCreation;
-    }
-    private void OnDisable()
-    {
-        InputRegister.Instance.InputInteractive -= PaymantCreation;
-    }
-
-
-
+    //private void OnEnable()
+    //{
+    //    InputRegister.Instance.InputInteractive += PaymantCreation;
+    //}
+    //private void OnDisable()
+    //{
+    //    InputRegister.Instance.InputInteractive -= PaymantCreation;
+    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerMovement player))
         {
-            this.player = player.gameObject;
             placeUI.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerMovement player) == this.player)
+        if (collision.TryGetComponent(out PlayerMovement player))
         {
-            this.player = null;
             placeUI.gameObject.SetActive(false);
         }
     }
 
     private void PaymantCreation()
     {
-        if (player == null || !CoinManager.Instance.IsCanTakeCoins(1))
+        if (!CoinManager.Instance.IsCanTakeCoins(1))
         {
             return;
         }
@@ -67,5 +60,20 @@ public class ConstructionPlace : MonoBehaviour
         obj.SetTrapPlace(gameObject);
 
         obj.transform.position = place.position;
+    }
+
+
+    public bool CanInteractive()
+    {
+        return gameObject.activeSelf;
+    }
+    public void Interactive()
+    {
+        PaymantCreation();
+    }
+
+    public void StopInteractive()
+    {
+        
     }
 }

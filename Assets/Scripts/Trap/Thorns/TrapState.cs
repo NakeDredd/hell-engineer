@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
-public class TrapState : MonoBehaviour
+public class TrapState : MonoBehaviour, IInteractive
 {
     [SerializeField] private TrapStateUI stateUI;
     [SerializeField] private float reloadTime;
@@ -16,41 +16,34 @@ public class TrapState : MonoBehaviour
     public bool IsActive => isActive;
 
 
-    private void Start()
-    {
-        InputRegister.Instance.InputInteractive += ReloadTrap;
-        InputRegister.Instance.UntapInteractive += StopReloadTrap;
-    }
-    private void OnDisable()
-    {
-        InputRegister.Instance.InputInteractive -= ReloadTrap;
-        InputRegister.Instance.UntapInteractive -= StopReloadTrap;
-    }
+    //private void Start()
+    //{
+    //    InputRegister.Instance.InputInteractive += ReloadTrap;
+    //    InputRegister.Instance.UntapInteractive += StopReloadTrap;
+    //}
+    //private void OnDisable()
+    //{
+    //    InputRegister.Instance.InputInteractive -= ReloadTrap;
+    //    InputRegister.Instance.UntapInteractive -= StopReloadTrap;
+    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerMovement player) && !isActive)
         {
-            this.player = player.gameObject;
             stateUI.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerMovement player) == this.player && !isActive)
+        if (collision.TryGetComponent(out PlayerMovement player) && !isActive)
         {
-            this.player = null; 
             StopReloadTrap();
-            stateUI.gameObject.SetActive(false); 
+            stateUI.gameObject.SetActive(false);
         }
     }
 
     private void ReloadTrap()
     {
-        if (player == null)
-        {
-            return;
-        }
-
         stateUI.ZeroingProgressBar();
 
         float plus = 100 / reloadTime;
@@ -82,5 +75,19 @@ public class TrapState : MonoBehaviour
     public void SetActive (bool value)
     {
         isActive = value;
+    }
+
+    public bool CanInteractive()
+    {
+        return !isActive;
+    }
+    public void Interactive()
+    {
+        ReloadTrap();
+    }
+
+    public void StopInteractive()
+    {
+        StopReloadTrap();
     }
 }
