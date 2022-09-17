@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 717973450447542794}
   - component: {fileID: 2792339209297338500}
   m_Layer: 0
-  m_Name: TrapPlace (Turret)
+  m_Name: DefensePlace (Turret)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8929348623317726015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.025301373}
+  m_LocalPosition: {x: -0.030089378, y: 0.002, z: 0.025301373}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

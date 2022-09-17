@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 717973450447542792, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: m_Name
-      value: ThrowPlace Variant
+      value: DefensePlace (Trap)
       objectReference: {fileID: 0}
     - target: {fileID: 717973450447542793, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: m_RootOrder
@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 717973450447542793, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.35
+      value: 4.549522
       objectReference: {fileID: 0}
     - target: {fileID: 717973450447542793, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: m_LocalPosition.y
@@ -74,6 +74,6 @@ PrefabInstance:
     - target: {fileID: 3353115050730014394, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1541751680, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
+      objectReference: {fileID: -1423850691, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
