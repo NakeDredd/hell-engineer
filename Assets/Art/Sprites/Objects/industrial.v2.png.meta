@@ -2448,48 +2448,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: industrial.v2_111
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8df1aa29e39b4f147a971845941ab707
-      internalID: -398880420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_112
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 432
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c91b047bd21a34488a6d9e95b9acdd2
-      internalID: 431892454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: industrial.v2_113
       rect:
         serializedVersion: 2
@@ -2800,48 +2758,6 @@ TextureImporter:
       bones: []
       spriteID: aa43b30b0c94e7548a220639860d6686
       internalID: -1975105982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_128
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 416
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39fba104628984944bd4bf41dc7e0ef3
-      internalID: 1769584344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_129
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 416
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5d0cd64f4e327640959531973a0630f
-      internalID: -642506078
       vertices: []
       indices: 
       edges: []
@@ -3220,48 +3136,6 @@ TextureImporter:
       bones: []
       spriteID: bbc018642ebf3d74d913e572b0b49aab
       internalID: 1350066463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_148
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 400
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 728243b8d130aa7428ab682aee3bfb12
-      internalID: -1058405806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_149
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 400
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba9db3b71fa3e2d43b9de000120d3ec0
-      internalID: 835882192
       vertices: []
       indices: 
       edges: []
@@ -3708,48 +3582,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: industrial.v2_171
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 384
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 761f034061eba5542b3e262ccf8490d0
-      internalID: -1810207037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_172
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 384
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c4820b9008c9cc40a0a53c52137bada
-      internalID: -540047263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: industrial.v2_173
       rect:
         serializedVersion: 2
@@ -4173,10 +4005,10 @@ TextureImporter:
       name: industrial.v2_193
       rect:
         serializedVersion: 2
-        x: 336
-        y: 368
-        width: 16
-        height: 16
+        x: 337
+        y: 370
+        width: 29
+        height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4186,27 +4018,6 @@ TextureImporter:
       bones: []
       spriteID: 1b266d47ac468b540bac17d6a843ea39
       internalID: -1889212619
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_194
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 368
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f609a75864ad7841a947a04fde0f1f7
-      internalID: -1789534283
       vertices: []
       indices: 
       edges: []
@@ -5073,69 +4884,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: industrial.v2_236
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c04f9c938aaa8e543b4e5c9721264339
-      internalID: 254327225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_237
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20b27009a6c5cef4c83b1fc3adef2c84
-      internalID: 1027863510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_238
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfbd406af6792ef49b5dac14aa7e3690
-      internalID: 836640204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: industrial.v2_239
       rect:
         serializedVersion: 2
@@ -5535,69 +5283,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: industrial.v2_258
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 320
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1a52b49c0469504ab1eacb4f1919215
-      internalID: 422704455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_259
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 320
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01cc2181dab2ba64eab41e4eb7910421
-      internalID: -2122312976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_260
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 320
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98b3c08ed36cf69439f17c4dd9eaf963
-      internalID: 1071136994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: industrial.v2_261
       rect:
         serializedVersion: 2
@@ -5937,10 +5622,10 @@ TextureImporter:
       name: industrial.v2_277
       rect:
         serializedVersion: 2
-        x: 288
+        x: 298
         y: 304
-        width: 16
-        height: 16
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5950,48 +5635,6 @@ TextureImporter:
       bones: []
       spriteID: 4662a2ba4df308540b45c60a1088e7f6
       internalID: 1255754929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_278
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 304
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69ea897e0cb9e05429de7ded080ababc
-      internalID: -70961724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: industrial.v2_279
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 304
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 019e33ff9fc96a043b5d8ccc6c1b9af6
-      internalID: 63405608
       vertices: []
       indices: 
       edges: []
