@@ -628,18 +628,6 @@ PrefabInstance:
       value: EnemySpawner
       objectReference: {fileID: 0}
     - target: {fileID: 5699586784026973046, guid: d589071073ce46743a49403e57c39c66, type: 3}
-      propertyPath: timeSpawn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5699586784026973046, guid: d589071073ce46743a49403e57c39c66, type: 3}
-      propertyPath: maxEnemies
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5699586784026973046, guid: d589071073ce46743a49403e57c39c66, type: 3}
-      propertyPath: minEnemies
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5699586784026973046, guid: d589071073ce46743a49403e57c39c66, type: 3}
       propertyPath: indicators.Array.size
       value: 2
       objectReference: {fileID: 0}
