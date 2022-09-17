@@ -46,8 +46,6 @@ public class ConstructionPlace : MonoBehaviour
 
     private void PaymantCreation()
     {
-        // Подключить потом кошелёк
-
         if (player == null || !CoinManager.Instance.IsCanTakeCoins(1))
         {
             return;

@@ -200,6 +200,7 @@ public class EnemyAIBehavior : MonoBehaviour, IDamagable
 
     public void Death()
     {
+        EnemySpawner.Instance.DeleateEnemy(this);
         Destroy(gameObject);
     }
 

@@ -13,6 +13,11 @@ public abstract class BaseTrap : MonoBehaviour
 
     protected void OnDestroy()
     {
+        if (trapPlace == null)
+        {
+            return;
+        }
+
         trapPlace.SetActive(true);
     }
 }
