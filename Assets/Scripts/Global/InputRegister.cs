@@ -7,6 +7,7 @@ public class InputRegister : Singleton<InputRegister>
 {
     public Action<float> InputMovement;
     public Action InputInteractive, UntapInteractive;
+    public Action InputPause;
 
     private void Update()
     {
@@ -19,6 +20,11 @@ public class InputRegister : Singleton<InputRegister>
         else if (Input.GetKeyUp(KeyCode.E))
         {
             UntapInteractive?.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            InputPause?.Invoke();
         }
     }
 }

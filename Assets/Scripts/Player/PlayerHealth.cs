@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
     private void Death()
     {
         CurrentHealth = 0;
+        EndGameController.Instance.LoseTheGame();
         Destroy(gameObject);
     }
 }
