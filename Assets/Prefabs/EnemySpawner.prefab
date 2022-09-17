@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430838060608783579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.033721}
+  m_LocalPosition: {x: -3.54, y: -1.38, z: 10.033721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -171,7 +171,7 @@ MonoBehaviour:
   indicators: []
   minEnemies: 2
   maxEnemies: 6
-  timeSpawn: 1
+  timeSpawn: 60
   timeStepSpawn: 0.9
 --- !u!1 &5699586784028497364
 GameObject:
@@ -229,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6460811757937680916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.033721}
+  m_LocalPosition: {x: 3.88, y: -1.12, z: 10.033721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

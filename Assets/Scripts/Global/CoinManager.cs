@@ -9,6 +9,11 @@ public class CoinManager : Singleton<CoinManager>
 
     public static Action<int> OnUpdateCounter;
 
+    private void Start()
+    {
+        Coins = coins;
+    }
+
     public int Coins { 
         get => coins; 
         private set
