@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,11 @@ public class CoinManager : Singleton<CoinManager>
 {
     [SerializeField] private int coins;
 
-    public delegate void CoinUpdateDelegate(int coinCount);
-    public static CoinUpdateDelegate OnUpdateCounter;
+    public static Action<int> OnUpdateCounter;
 
     public int Coins { 
         get => coins; 
-        set
+        private set
         {
             coins = value;
             OnUpdateCounter?.Invoke(coins);
@@ -20,16 +20,16 @@ public class CoinManager : Singleton<CoinManager>
 
     public void TakeCoin(int coinsToTake)
     {
-        if (Coins - coinsToTake <= 0)
+        if (!IsCanTakeCoins(coinsToTake))
         {
             Debug.LogWarning("Not Enough Coins!");
             return;
         }
-        Coins--;
+        Coins -= coinsToTake;
     }
     public bool IsCanTakeCoins(int coinsToTake)
     {
-        return !(Coins - coinsToTake <= 0);
+        return Coins - coinsToTake < 0 ? false : true;
     }
 
     public void AddCoin()

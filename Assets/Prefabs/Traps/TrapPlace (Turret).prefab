@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeUI: {fileID: 717973450789808521}
-  trap: {fileID: 0}
+  trap: {fileID: 8368019717833230656, guid: 0bcb163c161d4c24fa2534138ffadd24, type: 3}
   place: {fileID: 717973450447542793}
 --- !u!61 &2792339209297338500
 BoxCollider2D:

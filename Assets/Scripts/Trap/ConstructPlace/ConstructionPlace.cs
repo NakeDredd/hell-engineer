@@ -48,10 +48,12 @@ public class ConstructionPlace : MonoBehaviour
     {
         // Подключить потом кошелёк
 
-        if (player == null)
+        if (player == null || !CoinManager.Instance.IsCanTakeCoins(1))
         {
             return;
         }
+
+        CoinManager.Instance.TakeCoin(1);
 
         if (placeUI.ChangeNextCoin())
         {

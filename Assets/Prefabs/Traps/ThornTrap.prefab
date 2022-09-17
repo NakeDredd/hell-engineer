@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapState: {fileID: 6484190628253128587}
-  damage: 0
+  damage: 1
 --- !u!114 &6484190628253128587
 MonoBehaviour:
   m_ObjectHideFlags: 0
