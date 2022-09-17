@@ -149,7 +149,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -359660099, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
+  m_Sprite: {fileID: -1632236571, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,6 +250,10 @@ PrefabInstance:
     - target: {fileID: 1949911023155828754, guid: b3f3d91e84f908840887786b779f12fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949911023155828757, guid: b3f3d91e84f908840887786b779f12fb, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 1015
       objectReference: {fileID: 0}
     - target: {fileID: 1949911023155828758, guid: b3f3d91e84f908840887786b779f12fb, type: 3}
       propertyPath: trap

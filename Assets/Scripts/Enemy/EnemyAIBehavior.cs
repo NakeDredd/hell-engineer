@@ -21,6 +21,7 @@ public class EnemyAIBehavior : MonoBehaviour, IDamagable
     public const string ON_ATTACK_END = "OnAttackEnd";
     public const string ON_TARGET_IS_STILL_IN_RANGE = "OnTargetIsStillInRange";
     public const string ON_TARGET_IS_NOT_STILL_IN_RANGE = "OnTargetIsNotStillInRange";
+    public const string ON_DEATH = "OnDeath";
     #endregion
 
     [Header("Pathfinding")]
@@ -186,9 +187,10 @@ public class EnemyAIBehavior : MonoBehaviour, IDamagable
     #region HP
     public void GetDamage(int damage)
     {
-        if (damage > currentHealth)
+        if (damage >= currentHealth)
         {
             currentHealth = 0;
+            CustomEvent.Trigger(gameObject, ON_DEATH);
         }
         else
         {
@@ -196,14 +198,14 @@ public class EnemyAIBehavior : MonoBehaviour, IDamagable
         }
     }
 
-    public bool IsDead()
-    {
-        return currentHealth <= 0;
-    }
-
     public void Death()
     {
         Destroy(gameObject);
+    }
+
+    public void DropCoin()
+    {
+        Instantiate(coinPrefab, transform.position, Quaternion.identity);
     }
     #endregion
 }

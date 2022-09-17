@@ -17,10 +17,6 @@ public class ThornsTrap : BaseTrap
         if (other.TryGetComponent(out EnemyAIBehavior enemy))
         {
             enemy.GetDamage(damage);
-            if (enemy.IsDead())
-            {
-                enemy.Death();
-            }
 
             trapState.SetActive(false);
         }

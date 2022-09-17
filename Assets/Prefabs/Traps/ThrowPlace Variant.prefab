@@ -71,5 +71,9 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 2.72
       objectReference: {fileID: 0}
+    - target: {fileID: 3353115050730014394, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1541751680, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da46eca76b16ea44cad70f8c14fa7b19, type: 3}

@@ -30,11 +30,11 @@ public class Turret : BaseTrap
         {
             if (enemy.transform.position.x > transform.position.x)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             }
             else
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             }
 
             lineRenderer.enabled = true;
@@ -44,10 +44,6 @@ public class Turret : BaseTrap
             Observable.Timer(System.TimeSpan.FromSeconds(renderTime)).TakeUntilDisable(gameObject).Subscribe(_ => lineRenderer.enabled = false);
 
             enemy.GetDamage(damage);
-            if (enemy.IsDead())
-            {
-                enemy.Death();
-            }
 
             currentReloadTime = reloadTime;
         }

@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1043349516, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
+  m_Sprite: {fileID: 1896686853, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9b0cae106d7ad47b1e0b9edd7780f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadTime: 4
-  renderTime: 0.3
+  reloadTime: 1
+  renderTime: 0.1
   damage: 1
   lineRenderer: {fileID: 8368019717833230657}
   enemyMask:
@@ -126,7 +126,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -170,7 +170,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.9245283, g: 0.8031493, b: 0.039248828, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
