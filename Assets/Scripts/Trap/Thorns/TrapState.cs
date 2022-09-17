@@ -9,23 +9,11 @@ public class TrapState : MonoBehaviour, IInteractive
     [SerializeField] private TrapStateUI stateUI;
     [SerializeField] private float reloadTime;
 
-    private GameObject player;
     private IDisposable reloadTimer;
     private bool isActive = true;
 
     public bool IsActive => isActive;
 
-
-    //private void Start()
-    //{
-    //    InputRegister.Instance.InputInteractive += ReloadTrap;
-    //    InputRegister.Instance.UntapInteractive += StopReloadTrap;
-    //}
-    //private void OnDisable()
-    //{
-    //    InputRegister.Instance.InputInteractive -= ReloadTrap;
-    //    InputRegister.Instance.UntapInteractive -= StopReloadTrap;
-    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerMovement player) && !isActive)

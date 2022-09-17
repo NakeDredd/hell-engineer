@@ -14,14 +14,6 @@ public class ConstructionPlace : MonoBehaviour, IInteractive
 
         placeUI.gameObject.SetActive(false);
     }
-    //private void OnEnable()
-    //{
-    //    InputRegister.Instance.InputInteractive += PaymantCreation;
-    //}
-    //private void OnDisable()
-    //{
-    //    InputRegister.Instance.InputInteractive -= PaymantCreation;
-    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerMovement player))
