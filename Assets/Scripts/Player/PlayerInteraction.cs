@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField] private List<IInteractive> places = new List<IInteractive>();
+    private List<IInteractive> places = new List<IInteractive>();
 
     private void Start()
     {
@@ -17,16 +17,9 @@ public class PlayerInteraction : MonoBehaviour
         InputRegister.Instance.UntapInteractive -= StopInteractive;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.TryGetComponent(out IInteractive interactive) && interactive.CanInteractive())
-        {
-            places.Add(interactive);
-        }
-    }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.TryGetComponent(out IInteractive interactive) && interactive.CanInteractive())
+        if (other.TryGetComponent(out IInteractive interactive))
         {
             places.Remove(interactive);
         }
@@ -41,7 +34,7 @@ public class PlayerInteraction : MonoBehaviour
 
         places[0].Interactive();
 
-        if (!places[0].CanInteractive())
+        if (places.Count > 0 && !places[0].CanInteractive())
         {
             places.RemoveAt(0);
         }
@@ -54,6 +47,21 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         places[0].StopInteractive();
+    }
+
+    public bool GetInteractive (IInteractive interact)
+    {
+        if (interact.CanInteractive())
+        {
+            places.Add(interact);
+        }
+
+        if (places.Count <= 0 || places[0] != interact)
+        {
+            return false;
+        }
+
+        return true;
     }
 }
 

@@ -16,14 +16,14 @@ public class ConstructionPlace : MonoBehaviour, IInteractive
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerMovement player))
+        if (collision.TryGetComponent(out PlayerInteraction player) && player.GetInteractive(this))
         {
             placeUI.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerMovement player))
+        if (collision.TryGetComponent(out PlayerInteraction player))
         {
             placeUI.gameObject.SetActive(false);
         }

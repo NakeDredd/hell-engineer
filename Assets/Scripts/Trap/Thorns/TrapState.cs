@@ -16,14 +16,14 @@ public class TrapState : MonoBehaviour, IInteractive
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerMovement player) && !isActive)
+        if (collision.TryGetComponent(out PlayerInteraction player) && player.GetInteractive(this) && !isActive)
         {
             stateUI.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerMovement player) && !isActive)
+        if (collision.TryGetComponent(out PlayerInteraction player) && !isActive)
         {
             StopReloadTrap();
             stateUI.gameObject.SetActive(false);
