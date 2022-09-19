@@ -1,29 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UniRx;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : Singleton<EnemySpawner>
 {
     [SerializeField] private EnemyAIBehavior[] enemies;
     [SerializeField] private Transform[] spawnPositions;
     [SerializeField] private SpriteRenderer[] indicators;
+    [SerializeField] private TMP_Text currentTimeText;
     [SerializeField] private int minEnemies;
     [SerializeField] private int maxEnemies;
     [SerializeField] private float timeSpawn;
     [SerializeField] private float timeStepSpawn;
 
+    private int currentTime = 0;
+
     private List<EnemyAIBehavior> currentEnemies = new List<EnemyAIBehavior>();
+
+    private IDisposable currentTimeDis;
 
     private void Start ()
     {
+        StartCurrentTime();
         StartTimer();
+    }
+
+    private void StartCurrentTime ()
+    {
+        currentTimeDis = Observable.Interval(TimeSpan.FromSeconds(1)).TakeUntilDisable(gameObject).Subscribe(_ =>
+        {
+            currentTime++;
+            currentTimeText.text = currentTime.ToString();
+        });
     }
 
     private void StartTimer()
     {
-        Observable.Timer(System.TimeSpan.FromSeconds(timeSpawn)).TakeUntilDisable(gameObject).Subscribe(_ =>
+        Observable.Timer(TimeSpan.FromSeconds(timeSpawn)).TakeUntilDisable(gameObject).Subscribe(_ =>
         {
+            currentTimeDis?.Dispose();
             StartSpawn();
         });
     }
@@ -37,7 +56,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
         int iterationNumber = 0;
 
-        Observable.Timer(System.TimeSpan.FromSeconds(timeStepSpawn)).Repeat().TakeWhile(x => iterationNumber < enemiesNumber).TakeUntilDisable(gameObject).Subscribe(_ =>
+        Observable.Timer(TimeSpan.FromSeconds(timeStepSpawn)).Repeat().TakeWhile(x => iterationNumber < enemiesNumber).TakeUntilDisable(gameObject).Subscribe(_ =>
         {
             EnemyAIBehavior enemy = Instantiate(enemies[Random.Range(0, enemies.Length)], position, Quaternion.identity);
 
@@ -58,6 +77,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
         if (currentEnemies.Count <= 0)
         {
+            StartCurrentTime();
             StartTimer();
             SetIndicator(0, Color.white);
             SetIndicator(1, Color.white);
