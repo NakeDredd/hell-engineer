@@ -6,20 +6,17 @@ using UniRx;
 
 public class Turret : BaseTrap
 {
-    [SerializeField] private float reloadTime;
-    [SerializeField] private float renderTime = 0.3f;
-    [SerializeField] private int damage;
+    [SerializeField] private TurretCharacters turretCharacters;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private LayerMask enemyMask;
 
-    private float currentReloadTime;
     private List<EnemyAIBehavior> enemies = new List<EnemyAIBehavior>();
 
     private void FixedUpdate()
     {
-        currentReloadTime -= Time.fixedDeltaTime;
+        turretCharacters.CurrentReloadTime -= Time.fixedDeltaTime;
 
-        if (enemies.Count == 0 || currentReloadTime > 0)
+        if (enemies.Count == 0 || turretCharacters.CurrentReloadTime > 0)
         {
             return;
         }
@@ -41,11 +38,11 @@ public class Turret : BaseTrap
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, enemy.transform.position);
 
-            Observable.Timer(System.TimeSpan.FromSeconds(renderTime)).TakeUntilDisable(gameObject).Subscribe(_ => lineRenderer.enabled = false);
+            Observable.Timer(System.TimeSpan.FromSeconds(turretCharacters.RenderTime)).TakeUntilDisable(gameObject).Subscribe(_ => lineRenderer.enabled = false);
 
-            enemy.GetDamage(damage);
+            enemy.GetDamage(turretCharacters.Damage);
 
-            currentReloadTime = reloadTime;
+            turretCharacters.UpdateCurretnReloadTime();
         }
     }
 
@@ -67,4 +64,6 @@ public class Turret : BaseTrap
             enemies.OrderBy(x => (transform.position - x.transform.position).magnitude);
         }
     }
+
+    
 }

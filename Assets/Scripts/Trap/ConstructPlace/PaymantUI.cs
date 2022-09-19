@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ConstructionPlaceUI : MonoBehaviour
+public class PaymantUI : MonoBehaviour
 {
     [SerializeField] private GameObject[] grids;
     [SerializeField] private int[] gridsPrice;
@@ -27,12 +27,31 @@ public class ConstructionPlaceUI : MonoBehaviour
             }
         }
     }
+    public void Init(int price)
+    {
+        for (int i = 0; i < price; i++)
+        {
+            Image coin = Instantiate(coinImage);
+            coin.transform.SetParent(grids[0].transform);
+
+            coins.Add(coin);
+        }
+    }
     public void RemakeSprites()
     {
         foreach (var coin in coins)
         {
             coin.sprite = baseCoinSprite;
         }
+    }
+    public void ClearSprites()
+    {
+        foreach (var coin in coins)
+        {
+            Destroy(coin.gameObject);
+        }
+
+        coins.Clear();
     }
 
     public bool ChangeNextCoin ()

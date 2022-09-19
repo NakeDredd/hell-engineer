@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConstructionPlace : MonoBehaviour, IInteractive
 {
-    [SerializeField] private ConstructionPlaceUI placeUI;
+    [SerializeField] private PaymantUI placeUI;
     [SerializeField] private BaseTrap trap;
     [SerializeField] private Transform place;
 
