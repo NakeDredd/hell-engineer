@@ -47,7 +47,7 @@ public class TurretCharacters : MonoBehaviour
                     Debug.Log(damage);
                 }
                 break;
-            case UpgradeVariant.RANGE:
+            case UpgradeVariant.RANGE_ZONE:
                 {
                     collider.radius += value;
                 }

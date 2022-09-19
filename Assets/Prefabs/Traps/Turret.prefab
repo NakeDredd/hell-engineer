@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e14a8cf29220f42a18a575edf35bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefsName: TurretUpgrade
   paymantUI: {fileID: 5198616506469808307}
   upgradeSequence:
   - upgradeVarinat: 0

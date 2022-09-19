@@ -7,6 +7,8 @@ public class ThornsTrap : BaseTrap
     [SerializeField] private TrapState trapState;
     [SerializeField] private int damage;
 
+    public int Damage => damage;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!trapState.IsActive)
@@ -18,7 +20,17 @@ public class ThornsTrap : BaseTrap
         {
             enemy.GetDamage(damage);
 
-            trapState.SetActive(false);
+            trapState.TrySetActive(false);
         }
+    }
+
+    public void SetDamage (int value)
+    {
+        damage = value;
+    }
+    public void UpgradeDamage(int plusValue)
+    {
+        damage += plusValue;
+        SetDamage(damage);
     }
 }

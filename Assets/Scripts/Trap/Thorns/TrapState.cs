@@ -8,11 +8,20 @@ public class TrapState : MonoBehaviour, IInteractive
 {
     [SerializeField] private TrapStateUI stateUI;
     [SerializeField] private float reloadTime;
+    [SerializeField] private int killsForOne = 1;
 
     private IDisposable reloadTimer;
     private bool isActive = true;
+    private int currentActiveKills;
 
     public bool IsActive => isActive;
+    public float ReloadTime => reloadTime;
+    public int KillsForOne => killsForOne;
+
+    private void Start()
+    {
+        currentActiveKills = killsForOne;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,7 +57,7 @@ public class TrapState : MonoBehaviour, IInteractive
             if (currentTime >= reloadTime)
             {
                 StopReloadTrap();
-                SetActive(true);
+                TrySetActive(true);
 
                 stateUI.gameObject.SetActive(false);
             }
@@ -60,9 +69,39 @@ public class TrapState : MonoBehaviour, IInteractive
         stateUI.ZeroingProgressBar();
     }
 
-    public void SetActive (bool value)
+    public void TrySetActive (bool value)
     {
+        if (!value && currentActiveKills >= 1)
+        {
+            currentActiveKills--;
+
+            return;
+        }
+        else if (value)
+        {
+            currentActiveKills = killsForOne;
+        }
+
         isActive = value;
+    }
+
+    public void UpgradeKillsForOne (int plusValue)
+    {
+        killsForOne += plusValue;
+        currentActiveKills = killsForOne;
+    }
+    public void SetKillsForOne(int value)
+    {
+        killsForOne = value;
+        currentActiveKills = killsForOne;
+    }
+    public void UpgradeReloadTime(float minusValue)
+    {
+        reloadTime -= minusValue;
+    }
+    public void SetReloadTime(float value)
+    {
+        reloadTime = value;
     }
 
     public bool CanInteractive()
