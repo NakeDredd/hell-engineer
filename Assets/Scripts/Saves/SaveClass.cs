@@ -8,12 +8,12 @@ public class SaveClass
 {
     public static void Save<T> (string name, T serializableObj)
     {
-        BinaryFormatter bf = new BinaryFormatter();
+        //BinaryFormatter bf = new BinaryFormatter();
 
-        using (FileStream fs = new FileStream("Saves/" + name + ".dat", FileMode.OpenOrCreate))
-        {
-            bf.Serialize(fs, serializableObj);
-        }
+        //using (FileStream fs = new FileStream("Saves/" + name + ".dat", FileMode.OpenOrCreate))
+        //{
+        //    bf.Serialize(fs, serializableObj);
+        //}
     }
     public static T GetSave<T>(string name)
     {
