@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: be660000
-      m_LastClickedID: 26302
-      m_ExpandedIDs: b8d5fffff0f9ffff
+      m_SelectedIDs: fcf8ffff
+      m_LastClickedID: -1796
+      m_ExpandedIDs: 6e58ffff4e60ffff6c63ffff8863ffff6664ffffb8d5fffff0f9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.6794188, y: -2.1773276, z: 0.008753925}
+    m_Target: {x: -16.227116, y: -3.6562188, z: 0.019027928}
     speed: 2
-    m_Value: {x: -0.6794188, y: -2.1773276, z: 0.008753925}
+    m_Value: {x: -16.227116, y: -3.6562188, z: 0.019027928}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.141635
+    m_Target: 1.6281933
     speed: 2
-    m_Value: 4.141635
+    m_Value: 1.6281933
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -732,22 +732,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Enemy
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Enemy
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\NakedDredd\hell-engineer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 123}
-    m_SelectedIDs: 54690000
-    m_LastClickedID: 26964
-    m_ExpandedIDs: 000000002a6900002c6900002e69000030690000326900003469000036690000386900003a6900003c6900003e690000406900004269000000ca9a3b
+    scrollPos: {x: 0, y: 51}
+    m_SelectedIDs: 4e690000
+    m_LastClickedID: 26958
+    m_ExpandedIDs: 000000002a6900002c6900002e69000030690000326900003469000036690000386900003a6900003c6900003e69000040690000426900004e6900005469000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -800,8 +800,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: be660000
-    m_LastClickedInstanceID: 26302
+    m_SelectedInstanceIDs: fcf8ffff
+    m_LastClickedInstanceID: -1796
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e264000026640000ca680000
     m_RenameOverlay:
@@ -920,7 +920,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 156
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

@@ -18,6 +18,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
     [SerializeField] private float timeStepSpawn;
 
     private int currentTime = 0;
+    private bool direction;
 
     private List<EnemyAIBehavior> currentEnemies = new List<EnemyAIBehavior>();
 
@@ -69,6 +70,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
     private void SetIndicator (int i, Color color)
     {
         indicators[i].color = color;
+        direction = i == 0 ? true : false;
     }
 
     public void DeleateEnemy (EnemyAIBehavior enemy)
@@ -77,6 +79,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
         if (currentEnemies.Count <= 0)
         {
+            ResourcesGenerator.Instance.GenerateResources(direction);
+
             StartCurrentTime();
             StartTimer();
             SetIndicator(0, Color.white);
