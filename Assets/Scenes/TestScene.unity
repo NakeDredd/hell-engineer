@@ -3381,7 +3381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699586784026973045, guid: d589071073ce46743a49403e57c39c66, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5699586784026973046, guid: d589071073ce46743a49403e57c39c66, type: 3}
       propertyPath: timeSpawn
@@ -4266,7 +4266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6638095255330902373, guid: 96d4d4385d716af4cb35432dc0d46e86, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9139340366021169736, guid: 96d4d4385d716af4cb35432dc0d46e86, type: 3}
       propertyPath: m_Name

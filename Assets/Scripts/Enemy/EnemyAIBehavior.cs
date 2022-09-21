@@ -56,9 +56,6 @@ public class EnemyAIBehavior : MonoBehaviour, IDamagable
 
     private float currentSpeed;
 
-    [Header("Other")]
-    [SerializeField] private GameObject coinPrefab;
-
 
     [Button] private void UpdateParams()
     {
@@ -202,11 +199,6 @@ public class EnemyAIBehavior : MonoBehaviour, IDamagable
     {
         EnemySpawner.Instance.DeleateEnemy(this);
         Destroy(gameObject);
-    }
-
-    public void DropCoin()
-    {
-        Instantiate(coinPrefab, transform.position, Quaternion.identity);
     }
     #endregion
 }
