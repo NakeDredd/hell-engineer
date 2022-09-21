@@ -1,4 +1,5 @@
-    using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     private int currentHealth;
 
-    public delegate void PlayerHealthDelegate(int health);
-    public static PlayerHealthDelegate OnPlayerHpChange;
+    public static Action<int> OnPlayerHpChange;
 
     public int CurrentHealth {
         get => currentHealth;
@@ -29,6 +29,13 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             CurrentHealth -= damage;
+        }
+    }
+    public void Paymant(int value)
+    {
+        if (CurrentHealth - value >= 0)
+        {
+            CurrentHealth -= value;
         }
     }
 

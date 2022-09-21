@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 278.4
     height: 432.8
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: b8d5fffff0f9ffff8e660000
+      m_SelectedIDs: be660000
+      m_LastClickedID: 26302
+      m_ExpandedIDs: b8d5fffff0f9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -524,9 +524,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.5017017, y: -0.74335504, z: -0.014213462}
+    m_Target: {x: -0.6794188, y: -2.1773276, z: 0.008753925}
     speed: 2
-    m_Value: {x: 1.5017017, y: -0.74335504, z: -0.014213462}
+    m_Value: {x: -0.6794188, y: -2.1773276, z: 0.008753925}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -577,9 +577,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.56354
+    m_Target: 4.141635
     speed: 2
-    m_Value: 6.56354
+    m_Value: 4.141635
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -686,7 +686,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: coinMan
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -698,21 +698,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts/Player
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: coinMan
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts/Player
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\NakedDredd\hell-engineer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 107}
-    m_SelectedIDs: 4e690000
-    m_LastClickedID: 26958
+    scrollPos: {x: 0, y: 143}
+    m_SelectedIDs: 5c690000
+    m_LastClickedID: 26972
     m_ExpandedIDs: 000000002a6900002c6900002e69000030690000326900003469000036690000386900003a6900003c6900003e69000040690000426900004e69000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -766,8 +766,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: be660000
+    m_LastClickedInstanceID: 26302
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e264000026640000ca680000
     m_RenameOverlay:

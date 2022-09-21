@@ -5,23 +5,9 @@ using UnityEngine;
 
 public class CoinManager : Singleton<CoinManager>
 {
-    [SerializeField] private int coins;
+    [SerializeField] private PlayerHealth playerHealth;
 
     public static Action<int> OnUpdateCounter;
-
-    private void Start()
-    {
-        Coins = coins;
-    }
-
-    public int Coins { 
-        get => coins; 
-        private set
-        {
-            coins = value;
-            OnUpdateCounter?.Invoke(coins);
-        }
-    }
 
     public void TakeCoin(int coinsToTake)
     {
@@ -30,15 +16,16 @@ public class CoinManager : Singleton<CoinManager>
             Debug.LogWarning("Not Enough Coins!");
             return;
         }
-        Coins -= coinsToTake;
+
+        playerHealth.Paymant(coinsToTake);
     }
     public bool IsCanTakeCoins(int coinsToTake)
     {
-        return Coins - coinsToTake < 0 ? false : true;
+        return playerHealth.CurrentHealth - coinsToTake < 0 ? false : true;
     }
 
     public void AddCoin()
     {
-        Coins++;
+        playerHealth.CurrentHealth++;
     }
 }
