@@ -16,6 +16,13 @@ public class PlayerInteraction : MonoBehaviour
         InputRegister.Instance.InputInteractive -= Interactive;
         InputRegister.Instance.UntapInteractive -= StopInteractive;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent(out IInteractive interactive) && interactive.CanInteractive())
+        {
+            places.Add(interactive);
+        }
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -36,6 +43,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (places.Count > 0 && !places[0].CanInteractive())
         {
+            places[0].StopInteractive();
             places.RemoveAt(0);
         }
     }
@@ -48,26 +56,11 @@ public class PlayerInteraction : MonoBehaviour
 
         places[0].StopInteractive();
     }
-
-    public bool GetInteractive (IInteractive interact)
-    {
-        if (interact.CanInteractive())
-        {
-            places.Add(interact);
-        }
-
-        if (places.Count <= 0 || places[0] != interact)
-        {
-            return false;
-        }
-
-        return true;
-    }
 }
 
 public interface IInteractive
 {
-    public bool CanInteractive();
-    public void Interactive();
-    public void StopInteractive();
+    public bool CanInteractive(); // Внутрення настройка объекта по типу отображения UI и прочие проверки
+    public void Interactive();  // Взаимодействие
+    public void StopInteractive(); // Преркащение взаимодействия, например зажима кнопки
 }

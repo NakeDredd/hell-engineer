@@ -44,7 +44,6 @@ public class TurretCharacters : MonoBehaviour
             case UpgradeVariant.DAMAGE:
                 {
                     damage += (int)value;
-                    Debug.Log(damage);
                 }
                 break;
             case UpgradeVariant.RANGE_ZONE:
@@ -66,7 +65,6 @@ public class TurretCharacters : MonoBehaviour
 
         Save();
     }
-
 
     private void Save ()
     {

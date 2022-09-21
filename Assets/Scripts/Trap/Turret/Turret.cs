@@ -4,19 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
-public class Turret : BaseTrap
+public class Turret : BaseTrap, IInteractive
 {
     [SerializeField] private TurretCharacters turretCharacters;
     [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private GameObject connectedIndicator;
     [SerializeField] private LayerMask enemyMask;
 
+    private bool canShoot;
+
     private List<EnemyAIBehavior> enemies = new List<EnemyAIBehavior>();
+
+    public bool CanShoot => canShoot;
+
 
     private void FixedUpdate()
     {
         turretCharacters.CurrentReloadTime -= Time.fixedDeltaTime;
 
-        if (enemies.Count == 0 || turretCharacters.CurrentReloadTime > 0)
+        if (enemies.Count == 0 || turretCharacters.CurrentReloadTime > 0 || !canShoot)
         {
             return;
         }
@@ -65,5 +71,32 @@ public class Turret : BaseTrap
         }
     }
 
-    
+    public void SetShoot (bool value)
+    {
+        canShoot = value;
+
+        connectedIndicator.SetActive(value);
+    }
+
+    public bool CanInteractive()
+    {
+        if (TrapGenerator.Instance.PickUp && !canShoot)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void Interactive()
+    {
+        SetShoot(true);
+
+        TrapGenerator.Instance.AddTrap(this);
+    }
+
+    public void StopInteractive()
+    {
+
+    }
 }

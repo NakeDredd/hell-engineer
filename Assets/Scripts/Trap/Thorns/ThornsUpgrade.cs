@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThornsUpgrade : BaseUpgrade, IInteractive
+public class ThornsUpgrade : BaseUpgrade, IPaymant
 {
     private static PrefsValue<int> currentUpgrade;
 
@@ -17,14 +17,14 @@ public class ThornsUpgrade : BaseUpgrade, IInteractive
     }
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerInteraction player) && player.GetInteractive(this) && CanInteractive())
+        if (collision.TryGetComponent(out PlayerPaymant player) && CanPaymant())
         {
             paymantUI.gameObject.SetActive(true);
         }
     }
     protected void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerInteraction player))
+        if (collision.TryGetComponent(out PlayerPaymant player))
         {
             paymantUI.gameObject.SetActive(false);
         }
@@ -34,17 +34,14 @@ public class ThornsUpgrade : BaseUpgrade, IInteractive
         UpgradeEvent?.Invoke(upgradeSequence[currentUpgrade.Value].upgradeVarinat, upgradeSequence[currentUpgrade.Value].value);
     }
 
-    public bool CanInteractive()
-    {
-        return CanUpgrade(currentUpgrade.Value);
-    }
 
-    public void Interactive()
+    public void Paymant()
     {
         BaseInteractive(ref currentUpgrade, () => Upgrade());
     }
-    public void StopInteractive()
-    {
 
+    public bool CanPaymant()
+    {
+        return CanUpgrade(currentUpgrade.Value);
     }
 }

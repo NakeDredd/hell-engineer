@@ -23,13 +23,6 @@ public class TrapState : MonoBehaviour, IInteractive
         currentActiveKills = killsForOne;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out PlayerInteraction player) && player.GetInteractive(this) && !isActive)
-        {
-            stateUI.gameObject.SetActive(true);
-        }
-    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerInteraction player) && !isActive)
@@ -106,6 +99,11 @@ public class TrapState : MonoBehaviour, IInteractive
 
     public bool CanInteractive()
     {
+        if (!isActive)
+        {
+            stateUI.gameObject.SetActive(true);
+        }
+
         return !isActive;
     }
     public void Interactive()

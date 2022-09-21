@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConstructionPlace : MonoBehaviour, IInteractive
+public class ConstructionPlace : MonoBehaviour, IPaymant
 {
     [SerializeField] private PaymantUI placeUI;
     [SerializeField] private BaseTrap trap;
@@ -16,14 +16,14 @@ public class ConstructionPlace : MonoBehaviour, IInteractive
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerInteraction player) && player.GetInteractive(this))
+        if (collision.TryGetComponent(out PlayerPaymant player) && CanPaymant())
         {
             placeUI.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerInteraction player))
+        if (collision.TryGetComponent(out PlayerPaymant player))
         {
             placeUI.gameObject.SetActive(false);
         }
@@ -54,18 +54,13 @@ public class ConstructionPlace : MonoBehaviour, IInteractive
         obj.transform.position = place.position;
     }
 
-
-    public bool CanInteractive()
-    {
-        return gameObject.activeSelf;
-    }
-    public void Interactive()
+    public void Paymant()
     {
         PaymantCreation();
     }
 
-    public void StopInteractive()
+    public bool CanPaymant()
     {
-        
+        return true;
     }
 }
