@@ -43,17 +43,17 @@ public class TurretCharacters : MonoBehaviour
         {
             case UpgradeVariant.DAMAGE:
                 {
-                    damage += (int)value;
+                    damage = (int)value;
                 }
                 break;
             case UpgradeVariant.RANGE_ZONE:
                 {
-                    collider.radius += value;
+                    collider.radius = value;
                 }
                 break;
             case UpgradeVariant.RATE_OF_FIRE:
                 {
-                    reloadTime -= value;
+                    reloadTime = value;
                 }
                 break;
             case UpgradeVariant.KILLS_FOR_ONE:

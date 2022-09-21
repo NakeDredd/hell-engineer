@@ -28,9 +28,4 @@ public class ThornsTrap : BaseTrap
     {
         damage = value;
     }
-    public void UpgradeDamage(int plusValue)
-    {
-        damage += plusValue;
-        SetDamage(damage);
-    }
 }

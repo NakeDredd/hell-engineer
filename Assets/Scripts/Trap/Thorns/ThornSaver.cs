@@ -22,27 +22,32 @@ public class ThornSaver : MonoBehaviour
             return;
         }
 
-        trap.UpgradeDamage(thorns.damage);
+        trap.SetDamage(thorns.damage);
         trapState.SetReloadTime(thorns.reloadTime);
         trapState.SetKillsForOne(thorns.killsForOne);
     }
+    private void OnDestroy()
+    {
+        ThornsUpgrade.UpgradeEvent -= Upgrade;
+    }
+
     private void Upgrade(UpgradeVariant up, float value)
     {
         switch (up)
         {
             case UpgradeVariant.DAMAGE:
                 {
-                    trap.UpgradeDamage((int)value);
+                    trap.SetDamage((int)value);
                 }
                 break;
             case UpgradeVariant.RATE_OF_FIRE:
                 {
-                    trapState.UpgradeReloadTime(value);
+                    trapState.SetReloadTime(value);
                 }
                 break;
             case UpgradeVariant.KILLS_FOR_ONE:
                 {
-                    trapState.UpgradeKillsForOne((int)value);
+                    trapState.SetKillsForOne((int)value);
                 }
                 break;
         }

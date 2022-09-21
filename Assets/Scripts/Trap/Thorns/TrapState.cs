@@ -78,19 +78,10 @@ public class TrapState : MonoBehaviour, IInteractive
         isActive = value;
     }
 
-    public void UpgradeKillsForOne (int plusValue)
+    public void SetKillsForOne (int plusValue)
     {
-        killsForOne += plusValue;
+        killsForOne = plusValue;
         currentActiveKills = killsForOne;
-    }
-    public void SetKillsForOne(int value)
-    {
-        killsForOne = value;
-        currentActiveKills = killsForOne;
-    }
-    public void UpgradeReloadTime(float minusValue)
-    {
-        reloadTime -= minusValue;
     }
     public void SetReloadTime(float value)
     {
