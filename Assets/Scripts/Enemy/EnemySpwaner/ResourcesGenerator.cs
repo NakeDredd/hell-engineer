@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,6 +17,8 @@ public class ResourcesGenerator : Singleton<ResourcesGenerator>
 
     public void GenerateResources (bool left)
     {
+        List<Vector3> positions = new List<Vector3>();
+
         ClearClasters?.Invoke();
 
         int number = Random.Range(minResources, maxResources);
@@ -24,9 +27,16 @@ public class ResourcesGenerator : Singleton<ResourcesGenerator>
         {
             number = Mathf.Clamp(number, minResources, leftPositions.Length - 1);
 
+            foreach (var point in leftPositions)
+            {
+                positions.Add(point.position);
+            }
+
             for (int i = 0; i < number; i++)
             {
-                CreateClaster(leftPositions[Random.Range(0, leftPositions.Length)].position);
+                int pos = Random.Range(0, positions.Count);
+                CreateClaster(positions[pos]);
+                positions.RemoveAt(pos);
             }
 
             return;
@@ -35,15 +45,22 @@ public class ResourcesGenerator : Singleton<ResourcesGenerator>
         {
             number = Mathf.Clamp(number, minResources, rightPositions.Length - 1);
 
+            foreach (var point in rightPositions)
+            {
+                positions.Add(point.position);
+            }
+
             for (int i = 0; i < number; i++)
             {
-                CreateClaster(rightPositions[Random.Range(0, rightPositions.Length)].position);
+                int pos = Random.Range(0, positions.Count);
+                CreateClaster(positions[pos]);
+                positions.RemoveAt(pos);
             }
         }
     }
 
     private void CreateClaster (Vector3 position)
     {
-        ResourcesClaster claster = Instantiate(this.claster, position, Quaternion.identity);
+        Instantiate(claster, position, Quaternion.identity);
     }
 }

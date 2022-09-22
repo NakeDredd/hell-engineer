@@ -10,8 +10,6 @@ public class EnemySpawner : Singleton<EnemySpawner>
 {
     [SerializeField] private EnemyAIBehavior[] enemies;
     [SerializeField] private Transform[] spawnPositions;
-    [SerializeField] private SpriteRenderer[] indicators;
-    [SerializeField] private TMP_Text currentTimeText;
     [SerializeField] private int minEnemies;
     [SerializeField] private int maxEnemies;
     [SerializeField] private float timeSpawn;
@@ -26,17 +24,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
     private void Start ()
     {
-        StartCurrentTime();
         StartTimer();
-    }
-
-    private void StartCurrentTime ()
-    {
-        currentTimeDis = Observable.Interval(TimeSpan.FromSeconds(1)).TakeUntilDisable(gameObject).Subscribe(_ =>
-        {
-            currentTime++;
-            currentTimeText.text = currentTime.ToString();
-        });
     }
 
     private void StartTimer()
@@ -53,11 +41,14 @@ public class EnemySpawner : Singleton<EnemySpawner>
         int random = Random.Range(0, spawnPositions.Length);
 
         Vector3 position = spawnPositions[random].position;
-        SetIndicator(random, Color.green);
+
+        direction = random == 0 ? true : false;
+
+        PlayerCompas.Instance.SetDirection(direction);
 
         int iterationNumber = 0;
 
-        Observable.Timer(TimeSpan.FromSeconds(timeStepSpawn)).Repeat().TakeWhile(x => iterationNumber < enemiesNumber).TakeUntilDisable(gameObject).Subscribe(_ =>
+        Observable.Interval(TimeSpan.FromSeconds(timeStepSpawn)).TakeWhile(x => iterationNumber < enemiesNumber).TakeUntilDisable(gameObject).Subscribe(_ =>
         {
             EnemyAIBehavior enemy = Instantiate(enemies[Random.Range(0, enemies.Length)], position, Quaternion.identity);
 
@@ -65,12 +56,6 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
            iterationNumber++;
         });
-    }
-
-    private void SetIndicator (int i, Color color)
-    {
-        indicators[i].color = color;
-        direction = i == 0 ? true : false;
     }
 
     public void DeleateEnemy (EnemyAIBehavior enemy)
@@ -81,10 +66,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
         {
             ResourcesGenerator.Instance.GenerateResources(direction);
 
-            StartCurrentTime();
             StartTimer();
-            SetIndicator(0, Color.white);
-            SetIndicator(1, Color.white);
+            PlayerCompas.Instance.SetDirection();
         }
     }
 }
