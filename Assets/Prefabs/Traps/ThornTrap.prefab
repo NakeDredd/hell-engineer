@@ -106,6 +106,7 @@ MonoBehaviour:
   - upgradeVarinat: 3
     price: 2
     value: 5
+  trapState: {fileID: 6484190628253128587}
 --- !u!61 &6299561545951999157
 BoxCollider2D:
   m_ObjectHideFlags: 0

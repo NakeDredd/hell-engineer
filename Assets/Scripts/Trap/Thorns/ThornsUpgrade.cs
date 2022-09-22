@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThornsUpgrade : BaseUpgrade, IPaymant
+public class ThornsUpgrade : BaseUpgrade, IInteractive
 {
+    [SerializeField] private TrapState trapState;
+
     private static PrefsValue<int> currentUpgrade;
 
     public static Action<UpgradeVariant, float> UpgradeEvent;
@@ -15,13 +17,7 @@ public class ThornsUpgrade : BaseUpgrade, IPaymant
 
         Init(ref currentUpgrade);
     }
-    protected void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out PlayerPaymant player) && CanPaymant())
-        {
-            paymantUI.gameObject.SetActive(true);
-        }
-    }
+
     protected void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerPaymant player))
@@ -34,14 +30,24 @@ public class ThornsUpgrade : BaseUpgrade, IPaymant
         UpgradeEvent?.Invoke(upgradeSequence[currentUpgrade.Value].upgradeVarinat, upgradeSequence[currentUpgrade.Value].value);
     }
 
+    public bool CanInteractive()
+    {
+        if (CanUpgrade(currentUpgrade.Value) && trapState.IsActive)
+        {
+            paymantUI.gameObject.SetActive(true);
+            return true;
+        }
 
-    public void Paymant()
+        return false;
+    }
+
+    public void Interactive()
     {
         BaseInteractive(ref currentUpgrade, () => Upgrade());
     }
 
-    public bool CanPaymant()
+    public void StopInteractive()
     {
-        return CanUpgrade(currentUpgrade.Value);
+
     }
 }

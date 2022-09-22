@@ -3442,7 +3442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699586784026973046, guid: d589071073ce46743a49403e57c39c66, type: 3}
       propertyPath: timeSpawn
-      value: 0.75
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5699586784026973046, guid: d589071073ce46743a49403e57c39c66, type: 3}
       propertyPath: maxEnemies

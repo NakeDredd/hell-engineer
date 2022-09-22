@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretUpgrade : BaseUpgrade, IPaymant
+public class TurretUpgrade : BaseUpgrade, IInteractive
 {
     private static PrefsValue<int> currentUpgrade;
 
@@ -29,18 +29,24 @@ public class TurretUpgrade : BaseUpgrade, IPaymant
         UpgradeEvent?.Invoke(upgradeSequence[currentUpgrade.Value].upgradeVarinat, upgradeSequence[currentUpgrade.Value].value);
     }
 
-    public void Paymant()
+    public bool CanInteractive()
+    {
+        if (CanUpgrade(currentUpgrade.Value) && !TrapGenerator.Instance.PickUp)
+        {
+            paymantUI.gameObject.SetActive(true);
+            return true;
+        }
+
+        return false;
+    }
+
+    public void Interactive()
     {
         BaseInteractive(ref currentUpgrade, () => Upgrade());
     }
 
-    public bool CanPaymant()
+    public void StopInteractive()
     {
-        if (CanUpgrade(currentUpgrade.Value))
-        {
-            paymantUI.gameObject.SetActive(true);
-        }
 
-        return CanUpgrade(currentUpgrade.Value);
     }
 }

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateUI: {fileID: 4368907319200933089}
   coin: {fileID: 6545200393490013735, guid: e9c39637af8f69c49837f84d2416b66e, type: 3}
-  reloadTime: 2
+  destroyTime: 2
   minCoins: 3
   maxCoins: 6
 --- !u!212 &4368907320259409635
