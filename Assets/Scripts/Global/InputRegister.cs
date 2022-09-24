@@ -15,6 +15,18 @@ public class InputRegister : Singleton<InputRegister>
     {
         InputMovement?.Invoke(Input.GetAxis("Horizontal"));
 
+        Interactive();
+        Compass();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            InputPause?.Invoke();
+        }
+    }
+
+
+    private void Interactive()
+    {
         if (Input.GetKeyDown(KeyCode.E))
         {
             InputInteractive?.Invoke();
@@ -23,7 +35,9 @@ public class InputRegister : Singleton<InputRegister>
         {
             UntapInteractive?.Invoke();
         }
-
+    }
+    private void Compass()
+    {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             InputCompass?.Invoke(true);
@@ -31,11 +45,6 @@ public class InputRegister : Singleton<InputRegister>
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             UntapCompass?.Invoke(false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            InputPause?.Invoke();
         }
     }
 }
