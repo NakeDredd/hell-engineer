@@ -13,7 +13,7 @@ public class TrapGeneratorUpgrater : BaseUpgrade, IPaymant
     {
         currentUpgrade = new PrefsValue<int>(prefsName, 0);
 
-        Init(ref currentUpgrade);
+        Init(currentUpgrade.Value);
     }
 
     protected void OnTriggerExit2D(Collider2D collision)

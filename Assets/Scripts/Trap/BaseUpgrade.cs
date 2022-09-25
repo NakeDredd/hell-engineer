@@ -9,14 +9,16 @@ public class BaseUpgrade : MonoBehaviour
     [SerializeField] protected PaymantUI paymantUI;
     [SerializeField] protected UpgradeSetting[] upgradeSequence;
 
-    protected virtual void Init(ref PrefsValue<int> currentUpgrade)
+    protected virtual void Init(int value)
     {
-        if (upgradeSequence.Length <= currentUpgrade.Value)
+        if (upgradeSequence.Length <= value)
         {
             return;
         }
 
-        paymantUI.Init(upgradeSequence[currentUpgrade.Value].price);
+        Debug.Log(value);
+
+        paymantUI.Init(upgradeSequence[value].price);
     }
 
 
@@ -60,7 +62,7 @@ public class BaseUpgrade : MonoBehaviour
 public class UpgradeSetting
 {
     public UpgradeVariant upgradeVarinat;
-    public int price;
+    public string price;
     public int value;
 }
 

@@ -18,6 +18,10 @@ public class InputRegister : Singleton<InputRegister>
         Interactive();
         Compass();
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            InputPaymant?.Invoke();
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             InputPause?.Invoke();

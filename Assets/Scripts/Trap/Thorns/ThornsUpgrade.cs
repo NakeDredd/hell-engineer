@@ -15,7 +15,7 @@ public class ThornsUpgrade : BaseUpgrade, IInteractive
     {
         currentUpgrade = new PrefsValue<int>(prefsName, 0);
 
-        Init(ref currentUpgrade);
+        Init(currentUpgrade.Value);
     }
 
     protected void OnTriggerExit2D(Collider2D collision)
