@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 557782592, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
+  m_Sprite: {fileID: -275168630, guid: 43e6de19ed0a23e4ea11273a33a4021a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -184,7 +184,6 @@ MonoBehaviour:
   attackPrepareTime: 0.5
   attackCooldownTime: 1
   speed: 600
-  coinPrefab: {fileID: 6545200393490013734, guid: e9c39637af8f69c49837f84d2416b66e, type: 3}
 --- !u!114 &4766445648850131694
 MonoBehaviour:
   m_ObjectHideFlags: 0
